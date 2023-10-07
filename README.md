@@ -2,8 +2,9 @@
 
 The HTML5 personal project by implementing AWS server.
 
-See the public website at:
-http://ec2-18-212-138-206.compute-1.amazonaws.com
+# About the AWS Server
+
+Since I can only use academic school aws service for now, the server connection cannot be maintained to be open for 24-7. So if there are any needs or requirements to check this lab at public environment please e-mail me and I will open the connection forwording back to you as soon as possible. My apologies for any incovenience to you.
 
 ## Project Description
 
