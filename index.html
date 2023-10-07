@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SE 3316 Lab 1</title>
+<meta name="description" content="Find the country you are looking for!">
+<meta name="author" content=" Leyang Xing">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+<!-- Place your content here -->
+<h1>SE 3316 Lab 1</h1>
+<p>Search your country!</p>
+
+<form  id = "searchForm" class="searching">
+    
+    <input type="text" id="searchingNameInput" class="text_searching" placeholder="Country Name" oninput="nameTyping()">
+    <button type="submit" id="nameSearchButton" class="text_searching" onclick="getNameElement(event)"><i class="fa fa-search"></i> </button>
+    <input type="text" id="searchingCurrencyInput" class="currency_searching" placeholder="Currency Name" oninput="currencyTyping()" onkeydown="getCurrencyElement(event)">
+    <button type="submit" id = "currencySearchButton" class="currency_searching" onclick="curBtEventListener(event)"><i class="fa fa-search"></i> </button>
+</form>
+
+<ul>        
+    <li id = "ad">  
+        <div>
+            <p class="country_flag"><img src="images/ad.png" alt="Andorra Flag"></p>
+            <p class="country_name">Andorra</p>
+            <p class="currency">EUR</p>
+            <p class="region">
+                Andorra la Vella,
+                Canillo,
+                Encamp,
+                Escaldes-Engordany,
+                La Massana,
+                Ordino,
+                Sant Julia de Loria
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Andorra" target="_blank">Andorra</a></p>
+        </div>      
+    </li>
+            
+    
+    <li id="ae">
+        <div>
+            <p class="country_flag"><img src="images/ae.png" alt="United Arab Emirates Flag"></p>
+            <p class="country_name">United Arab Emirates</p>
+            <p class="currency">AED</p>
+            <p class="region">
+                Ajman,
+                Abu Zaby,
+                Al Fujayrah,
+                Ash Shariqah,
+                Dubayy,
+                Ra's al Khaymah,
+                Umm al Qaywayn
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/United_Arab_Emirates" target="_blank">United Arab Emirates</a></p>
+        </div>
+    </li>
+
+    <li id="af">
+        <div>
+            <p class="country_flag"><img src="images/af.png" alt="Afghanistan Flag"></p>
+            <p class="country_name">Afghanistan</p>
+            <p class="currency">AFN</p>
+            <p class="region">
+                Badakhshan,
+                Badghis,
+                Baghlan,
+                Balkh,
+                Bamyan,
+                Daykundi,
+                Farah,
+                Faryab,
+                Ghazni,
+                Ghor,
+                Helmand,
+                Herat,
+                Jowzjan,
+                Kabul,
+                Kandahar,
+                Kapisa,
+                Khost,
+                Kunduz,
+                Laghman,
+                Logar,
+                Nangarhar,
+                Nimroz,
+                Paktiya,
+                Parwan,
+                Sar-e Pul,
+                Takhar,
+                Uruzgan
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Afghanistan" target="_blank">Afghanistan</a></p>
+        </div>
+    </li>
+
+    <li id="ag">
+        <div>
+            <p class="country_flag"><img src="images/ag.png" alt="Antigua and Barbuda Flag"></p>
+            <p class="country_name">Antigua and Barbuda</p>
+            <p class="currency">XCD</p>
+            <p class="region">
+                Redonda,
+                Saint George,
+                Saint John,
+                Saint Paul,
+                Saint Peter,
+                Saint Philip
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Antigua_and_Barbuda" target="_blank">Antigua and Barbuda</a></p>
+        </div>
+    </li>
+
+    <li id="ai">
+        <div>
+            <p class="country_flag"><img src="images/ai.png" alt="Anguilla Flag"></p>
+            <p class="country_name">Anguilla</p>
+            <p class="currency">XCD</p>
+            <p class="region">
+                Anguilla
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Anguilla" target="_blank">Anguilla</a></p>
+        </div>
+    </li>
+
+    <li id="al">
+        <div>
+            <p class="country_flag"><img src="images/al.png" alt="Albania Flag"></p>
+            <p class="country_name">Albania</p>
+            <p class="currency">ALL</p>
+            <p class="region">
+                Berat,
+                Diber,
+                Durres,
+                Elbasan,
+                Fier,
+                Gjirokaster,
+                Korce,
+                Kukes,
+                Lezhe,
+                Shkoder,
+                Tirane,
+                Vlore
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Albania" target="_blank">Albania</a></p>
+        </div>
+    </li>
+
+    <li id="am">
+        <div>
+            <p class="country_flag"><img src="images/am.png" alt="Armenia Flag"></p>
+            <p class="country_name">Armenia</p>
+            <p class="currency">AMD</p>
+            <p class="region">
+                Aragacotn,
+                Ararat,
+                Armavir,
+                Erevan,
+                Gegark'unik',
+                Kotayk',
+                Lori,
+                Sirak,
+                Syunik',
+                Tavus,
+                Vayoc Jor
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Armenia" target="_blank">Armenia</a></p>
+        </div>
+    </li>
+
+    <li id="bj">
+        <div>
+            <p class="country_flag"><img src="images/bj.png" alt="Benin Flag"></p>
+            <p class="country_name">Benin</p>
+            <p class="currency">XOF</p>
+            <p class="region">
+                Atacora,
+                Atlantique,
+                Borgou,
+                Collines,
+                Donga,
+                Littoral,
+                Mono,
+                Oueme,
+                Plateau,
+                Zou
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Benin" target="_blank">Benin</a></p>
+        </div>
+    </li>
+    
+    <li id="bl">
+        <div>
+            <p class="country_flag"><img src="images/bl.png" alt="Saint Barthelemy Flag"></p>
+            <p class="country_name">Saint Barthelemy</p>
+            <p class="currency">EUR</p>
+            <p class="region">
+                Saint Barthelemy
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Saint_Barthelemy" target="_blank">Saint Barthelemy</a></p>
+        </div>
+    </li>
+
+    <li id="gp">
+        <div>
+            <p class="country_flag"><img src="images/gp.png" alt="Guadeloupe Flag"></p>
+            <p class="country_name">Guadeloupe</p>
+            <p class="currency">EUR</p>
+            <p class="region">
+                Guadeloupe
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Guadeloupe" target="_blank">Guadeloupe</a></p>
+        </div>
+    </li>
+
+    <li id="bn">
+        <div>
+            <p class="country_flag"><img src="images/bn.png" alt="Brunei Darussalam Flag"></p>
+            <p class="country_name">Brunei Darussalam</p>
+            <p class="currency">BND</p>
+            <p class="region">
+                Belait,
+                Brunei-Muara,
+                Temburong,
+                Tutong
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Brunei_Darussalam" target="_blank">Brunei Darussalam</a></p>
+        </div>
+    </li>
+
+    <li id="bo">
+        <div>
+            <p class="country_flag"><img src="images/bo.png" alt="Bolivia Flag"></p>
+            <p class="country_name">Bolivia</p>
+            <p class="currency">BOB</p>
+            <p class="region">
+                Chuquisaca,
+                Cochabamba,
+                El Beni,
+                La Paz,
+                Oruro,
+                Pando,
+                Potosi,
+                Santa Cruz,
+                Tarija
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Bolivia" target="_blank">Bolivia</a></p>
+        </div>
+    </li>
+
+    <li id="bw">
+        <div>
+            <p class="country_flag"><img src="images/bw.png" alt="Botswana Flag"></p>
+            <p class="country_name">Botswana</p>
+            <p class="currency">BWP</p>
+            <p class="region">
+                Central,
+                Chobe,
+                Ghanzi,
+                Kgalagadi,
+                Kgatleng,
+                Kweneng,
+                North East,
+                North West,
+                South East,
+                Southern
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Botswana" target="_blank">Botswana</a></p>
+        </div>
+    </li>
+
+    <li id="ca">
+        <div>
+            <p class="country_flag"><img src="images/ca.png" alt="Canada Flag"></p>
+            <p class="country_name">Canada</p>
+            <p class="currency">CAD</p>
+            <p class="region">
+                Alberta,
+                British Columbia,
+                Manitoba,
+                New Brunswick,
+                Newfoundland and Labrador,
+                Northwest Territories,
+                Nova Scotia,
+                Nunavut,
+                Ontario,
+                Prince Edward Island,
+                Quebec,
+                Saskatchewan,
+                Yukon
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Canada" target="_blank">Canada</a></p>
+        </div>
+    </li>
+
+
+    <li id="cc">
+        <div>
+            <p class="country_flag"><img src="images/cc.png" alt="Cocos (Keeling) Islands Flag"></p>
+            <p class="country_name">Cocos (Keeling) Islands</p>
+            <p class="currency">AUD</p>
+            <p class="region">
+                Cocos (Keeling) Islands
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Cocos_(Keeling)_Islands" target="_blank">Cocos (Keeling) Islands</a></p>
+        </div>
+    </li>
+
+    <li id="ci">
+        <div>
+            <p class="country_flag"><img src="images/ci.png" alt="Ivory Coast Flag"></p>
+            <p class="country_name">Ivory Coast</p>
+            <p class="currency">XOF</p>
+            <p class="region">
+                Abidjan,
+                Bas-Sassandra,
+                Comoe,
+                Denguele,
+                Goh-Djiboua,
+                Lacs,
+                Lagunes,
+                Montagnes,
+                Sassandra-Marahoue,
+                Savanes,
+                Vallee du Bandama,
+                Woroba,
+                Yamoussoukro,
+                Zanzan
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Ivory_Coast" target="_blank">Ivory Coast</a></p>
+        </div>
+    </li>
+
+    <li id="ck">
+        <div>
+            <p class="country_flag"><img src="images/ck.png" alt="Cook Islands Flag"></p>
+            <p class="country_name">Cook Islands</p>
+            <p class="currency">NZD</p>
+            <p class="region">
+                Cook Islands
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Cook_Islands" target="_blank">Cook Islands</a></p>
+        </div>
+    </li>
+
+
+    <li id="cn">
+        <div>
+            <p class="country_flag"><img src="images/cn.png" alt="China Flag"></p>
+            <p class="country_name">China</p>
+            <p class="currency">CNY</p>
+            <p class="region">
+                Anhui,
+                Beijing,
+                Chongqing,
+                Fujian,
+                Gansu,
+                Guangdong,
+                Guangxi Zhuangzu,
+                Guizhou,
+                Hainan,
+                Hebei,
+                Heilongjiang,
+                Henan,
+                Hubei,
+                Hunan,
+                Jiangsu,
+                Jiangxi,
+                Jilin,
+                Liaoning,
+                Nei Mongol,
+                Ningxia Huizu,
+                Qinghai,
+                Shaanxi,
+                Shandong,
+                Shanghai,
+                Shanxi,
+                Sichuan,
+                Tianjin,
+                Xinjiang Uygur,
+                Xizang,
+                Yunnan,
+                Zhejiang
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/China" target="_blank">China</a></p>
+        </div>
+    </li>
+
+
+    <li id="fi">
+        <div>
+            <p class="country_flag"><img src="images/fi.png" alt="Finland Flag"></p>
+            <p class="country_name">Finland</p>
+            <p class="currency">EUR</p>
+            <p class="region">
+                Etela-Karjala,
+                Etela-Pohjanmaa,
+                Etela-Savo,
+                Kainuu,
+                Kanta-Hame,
+                Keski-Pohjanmaa,
+                Keski-Suomi,
+                Kymenlaakso,
+                Lappi,
+                Paijat-Hame,
+                Pirkanmaa,
+                Pohjanmaa,
+                Pohjois-Karjala,
+                Pohjois-Pohjanmaa,
+                Pohjois-Savo,
+                Satakunta,
+                Uusimaa,
+                Varsinais-Suomi
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/Finland" target="_blank">Finland</a></p>
+        </div>
+    </li>
+
+
+    <li id="gf">
+        <div>
+            <p class="country_flag"><img src="images/gf.png" alt="French Guiana Flag"></p>
+            <p class="country_name">French Guiana</p>
+            <p class="currency">EUR</p>
+            <p class="region">
+                Guyane
+            </p>
+            <p><a href="https://en.wikipedia.org/wiki/French_Guiana" target="_blank">French Guiana</a></p>
+        </div>
+    </li>
+</ul>
+
+
+<!-- Embedded JavaScript go here -->
+<script src="search.js"></script>
+<script src="dynamicSearch.js"></script>
+</body>
+</html>
